@@ -42,10 +42,26 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     else 
         gameResult = `Oh, You Lose! ${computerSelection} beats ${playerSelection}.`;
 
+        console.log(gameResult);
     return gameResult;
 
 }
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.textContent.trim());
+    })
+});
+
+
+
+
+
+
+
+/*
 function game() {
     
     let userChoice = undefined;
@@ -86,3 +102,5 @@ function game() {
     else
         console.warn('It ended like this, equality exists!');
 }
+
+*/
