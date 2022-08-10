@@ -22,7 +22,7 @@ body {
 
 .buttons {
     margin-top: 50px;
-    width: 400px;
+    width: 500px;
 
     display: flex;
     justify-content: space-between;
@@ -34,6 +34,8 @@ button {
     
     padding: 30px;
     cursor: pointer;
+
+    font-size: 25px;
 }
 
 #rock:hover {
@@ -46,4 +48,10 @@ button {
 
 #scissors:hover {
     background-color: rgb(204, 191, 121);
+}
+
+.roundResult, .trackings {
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: 'Verdana', sans-serif;
 }

@@ -22,6 +22,7 @@ function normalizeSelection(selection) {
 
 function playRound(playerSelection, computerSelection = computerChoice()) {
 
+    const roundResult = document.querySelector('.roundResult');
     let winner = 0;
     let gameResult = undefined; 
 
@@ -42,7 +43,7 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     else 
         gameResult = `Oh, You Lose! ${computerSelection} beats ${playerSelection}.`;
 
-        console.log(gameResult);
+    roundResult.textContent = gameResult;
     return gameResult;
 
 }
@@ -57,11 +58,6 @@ buttons.forEach((button) => {
 
 
 
-
-
-
-
-/*
 function game() {
     
     let userChoice = undefined;
@@ -103,4 +99,3 @@ function game() {
         console.warn('It ended like this, equality exists!');
 }
 
-*/
