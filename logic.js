@@ -3,8 +3,8 @@ function computerChoice() {
     let randomValue = Math.random() * 100;
     let choice = undefined; 
 
-    choice = (randomValue < 33) ? 'Rock' : (randomValue >= 33 && randomValue < 66) ?
-    'Paper' : (randomValue >= 66) ? 'Scissors' : 'Error';
+    choice = (randomValue < 33) ? 'Toad' : (randomValue >= 33 && randomValue < 66) ?
+    'Newt' : (randomValue >= 66) ? 'Frog' : 'Error';
 
     return choice;
 }
@@ -29,9 +29,9 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     playerSelection = normalizeSelection(playerSelection);
     computerSelection = normalizeSelection(computerSelection);
 
-    if(playerSelection == 'Rock' && computerSelection == 'Scissors'
-    || playerSelection == 'Paper' && computerSelection == 'Rock'
-    || playerSelection == 'Scissors' && computerSelection == 'Paper') {
+    if(playerSelection == 'Toad' && computerSelection == 'Frog'
+    || playerSelection == 'Newt' && computerSelection == 'Toad'
+    || playerSelection == 'Frog' && computerSelection == 'Newt') {
 
         gameResult = `Ah, You Win! ${playerSelection} beats ${computerSelection}.`;
     
@@ -48,54 +48,22 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
 
 }
 
-const buttons = document.querySelectorAll('button');
+const fIcons = document.getElementsByClassName('fa-solid');
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        playRound(button.textContent.trim());
-    })
-});
-
-
-
-function game() {
-    
-    let userChoice = undefined;
-    let gameStatus = undefined;
-
-    let userScore = 0;
-    let computerScore = 0;
-    
-
-    for(let i = 0; i < 5; i++) {
-
-        userChoice = prompt('What is your choice, wise player? ');
-        gameStatus = playRound(userChoice);
-
-        console.log(gameStatus);
-
-        switch(gameStatus.charAt(0)) {
-            case 'A':
-                userScore++;
-            break;
-
-            case 'O':
-                computerScore++;
-            break;
-
-            default:
-            break;
-        }
-
-        console.log(`User: ${userScore} | Computer: ${computerScore}`);
-
+for(let a = 0; a < fIcons.length; a++)
+{
+    if(fIcons[a].classList.contains('fa-frog')) {
+        fIcons[a].addEventListener('mouseover', function(e) {
+            e.target.classList.add('fa-bounce');
+        })
     }
-
-    if(userScore > computerScore)
-        console.log(`%cYou won the game`, 'background-color: green; color: white; padding: 20px;');
-    else if(userScore < computerScore) 
-        console.log(`%cYou lost the game`, 'background-color: lightcoral; color: white; padding: 20px;');
-    else
-        console.warn('It ended like this, equality exists!');
 }
 
+for(let a = 0; a < fIcons.length; a++)
+{
+    if(fIcons[a].classList.contains('fa-frog')) {
+        fIcons[a].addEventListener('mouseout', function(e) {
+            e.target.classList.remove('fa-bounce');
+        })
+    }
+}
