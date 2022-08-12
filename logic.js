@@ -106,7 +106,7 @@ for(let a = 0; a < fIcons.length; a++)
     fIcons[a].addEventListener('click', function(e) {   
         playRound(e.target.getAttribute('value'));
 
-        if(userScore > computerScore && userScore == 8)
+        if(userScore > computerScore && userScore == 9)
         {
             gamePoints.innerHTML = gamePoints.textContent + '<br>' + 
             '<br> <span class = \'winning\'>You won the whole game! </span> ' 
@@ -117,7 +117,7 @@ for(let a = 0; a < fIcons.length; a++)
             computerScore = 0;
         } 
         
-        else if(computerScore > userScore && computerScore == 8)
+        else if(computerScore > userScore && computerScore == 9)
         {
             gamePoints.innerHTML = gamePoints.textContent + '<br>' + 
             '<br><span class = \'losing\'>You lost the whole game! </span>' +
