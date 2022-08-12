@@ -1,6 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
-
+const gamePoints = document.querySelector('.actualScore');
 
 function computerChoice() {
 
@@ -29,8 +29,7 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     let scoreString = '';
 
     const roundResult = document.querySelector('.roundResult');
-    const gamePoints = document.querySelector('.actualScore');
-
+    
     let winner = 0;
     let gameResult = undefined; 
 
@@ -106,6 +105,31 @@ for(let a = 0; a < fIcons.length; a++)
 
     fIcons[a].addEventListener('click', function(e) {   
         playRound(e.target.getAttribute('value'));
+
+        if(userScore > computerScore && userScore == 8)
+        {
+            gamePoints.innerHTML = gamePoints.textContent + '<br>' + 
+            '<br> <span class = \'winning\'>You won the whole game! </span> ' 
+            + '<br> Click on one of the images to ' +
+            'start a new game.';
+
+            userScore = 0;
+            computerScore = 0;
+        } 
+        
+        else if(computerScore > userScore && computerScore == 8)
+        {
+            gamePoints.innerHTML = gamePoints.textContent + '<br>' + 
+            '<br><span class = \'losing\'>You lost the whole game! </span>' +
+            '<br> Click on one of the images to ' +
+            'start a new game.';
+
+            userScore = 0;
+            computerScore = 0;
+        }
+
+        else 
+            console.log('That');
     })
 }
 
