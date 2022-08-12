@@ -112,7 +112,8 @@ hr {
     cursor: crosshair;
 }
 
-.roundResult {
+.roundResult, h3, .actualScore {
     font-family: 'Verdana', sans-serif;
     font-size: 28px;
 }
+

@@ -1,3 +1,7 @@
+let userScore = 0;
+let computerScore = 0;
+
+
 function computerChoice() {
 
     let randomValue = Math.random() * 100;
@@ -21,8 +25,12 @@ function normalizeSelection(selection) {
 
 
 function playRound(playerSelection, computerSelection = computerChoice()) {
+    
+    let scoreString = '';
 
     const roundResult = document.querySelector('.roundResult');
+    const gamePoints = document.querySelector('.actualScore');
+
     let winner = 0;
     let gameResult = undefined; 
 
@@ -34,14 +42,19 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     || playerSelection == 'Locust' && computerSelection == 'Crow') {
 
         gameResult = `Ah, You Win! ${playerSelection} beats ${computerSelection}.`;
-    
+        userScore++;
     } 
     
     else if(playerSelection == computerSelection) 
         gameResult = 'Eh, It\'s a Draw!';
       
-    else 
+    else {
         gameResult = `Oh, You Lose! ${computerSelection} beats ${playerSelection}.`;
+        computerScore++;
+    }
+
+    scoreString = `${userScore} - ${computerScore}`;
+    gamePoints.textContent = scoreString;
 
     roundResult.textContent = gameResult;
     return gameResult;
