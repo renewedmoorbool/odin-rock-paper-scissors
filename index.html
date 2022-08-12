@@ -9,15 +9,56 @@
 </head>
 
 <body>
-    <h1 class = 'title'> Crow, frog, locust </h1>
+    <div class = 'content'>
+    <div class = 'rules-box'>
+        <h1 class = 'title'> Rules </h1>
 
-    <div class = 'playing-icons'>
-        <i class="fa-solid fa-crow">    </i>
-        <i class="fa-solid fa-frog">    </i>
-        <i class="fa-solid fa-locust">  </i>
+        
+        <div class = 'rules'>
+            <ul>
+                <li> 
+                    <span class = 'crow-word'>Crow </span>
+                     beats <span class = 'frog-word'> Frog </span> 
+                </li>
+
+                <li> 
+                    <span class = 'frog-word'> Frog </span>
+                     beats <span class = 'locust-word'>
+                     Locust </span> 
+                </li>
+
+                <li> 
+                    <span class = 'locust-word'> Locust </span> 
+                    beats <span class = 'crow-word'> Crow </span> 
+                </li>
+            </ul>
+
+            
+            <p class = 'note'><em>Note:</em> Pass your mouse over 
+            the images in order to animate them, click to make your choice. 
+            </p>
+            <hr>
+
+        </div>
     </div>
 
 
+
+    <div class = 'actual-game'>
+        <h1 class = 'title'> Crow, frog, locust </h1>
+
+        <div class = 'playing-icons'>
+            <i class="fa-solid fa-crow"   value =   'Crow'>    </i>
+            <i class="fa-solid fa-frog"   value =   'Frog'>    </i>
+            <i class="fa-solid fa-locust" value = 'Locust'>    </i>
+        </div>
+
+        <p class = 'roundResult'></p>
+
+        <h3> Score Player - Computer: </h3>
+    </div>
+
+    </div>
     <script src="https://kit.fontawesome.com/52dbb5e7c8.js" crossorigin="anonymous"></script>
     <script src = 'logic.js'></script>
 </body>

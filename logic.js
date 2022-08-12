@@ -3,8 +3,8 @@ function computerChoice() {
     let randomValue = Math.random() * 100;
     let choice = undefined; 
 
-    choice = (randomValue < 33) ? 'Toad' : (randomValue >= 33 && randomValue < 66) ?
-    'Newt' : (randomValue >= 66) ? 'Frog' : 'Error';
+    choice = (randomValue < 33) ? 'Crow' : (randomValue >= 33 && randomValue < 66) ?
+    'Frog' : (randomValue >= 66) ? 'Locust' : 'Error';
 
     return choice;
 }
@@ -29,9 +29,9 @@ function playRound(playerSelection, computerSelection = computerChoice()) {
     playerSelection = normalizeSelection(playerSelection);
     computerSelection = normalizeSelection(computerSelection);
 
-    if(playerSelection == 'Toad' && computerSelection == 'Frog'
-    || playerSelection == 'Newt' && computerSelection == 'Toad'
-    || playerSelection == 'Frog' && computerSelection == 'Newt') {
+    if(playerSelection == 'Crow' && computerSelection == 'Frog'
+    || playerSelection == 'Frog' && computerSelection == 'Locust'
+    || playerSelection == 'Locust' && computerSelection == 'Crow') {
 
         gameResult = `Ah, You Win! ${playerSelection} beats ${computerSelection}.`;
     
@@ -90,4 +90,9 @@ for(let a = 0; a < fIcons.length; a++)
             e.target.classList.remove('fa-beat');
         })
     }
+
+    fIcons[a].addEventListener('click', function(e) {   
+        playRound(e.target.getAttribute('value'));
+    })
 }
+
