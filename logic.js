@@ -57,6 +57,18 @@ for(let a = 0; a < fIcons.length; a++)
             e.target.classList.add('fa-bounce');
         })
     }
+
+    if(fIcons[a].classList.contains('fa-locust')) {
+        fIcons[a].addEventListener('mouseover', function(e) {
+            e.target.classList.add('fa-shake');
+        })
+    }
+
+    if(fIcons[a].classList.contains('fa-crow')) {
+        fIcons[a].addEventListener('mouseover', function(e) {
+            e.target.classList.add('fa-beat');
+        })
+    }
 }
 
 for(let a = 0; a < fIcons.length; a++)
@@ -64,6 +76,18 @@ for(let a = 0; a < fIcons.length; a++)
     if(fIcons[a].classList.contains('fa-frog')) {
         fIcons[a].addEventListener('mouseout', function(e) {
             e.target.classList.remove('fa-bounce');
+        })
+    }
+
+    if(fIcons[a].classList.contains('fa-locust')) {
+        fIcons[a].addEventListener('mouseout', function(e) {
+            e.target.classList.remove('fa-shake');
+        })
+    }
+
+    if(fIcons[a].classList.contains('fa-crow')) {
+        fIcons[a].addEventListener('mouseout', function(e) {
+            e.target.classList.remove('fa-beat');
         })
     }
 }

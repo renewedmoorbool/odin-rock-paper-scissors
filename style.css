@@ -33,6 +33,10 @@ body {
     color: green;
 }
 
+.fa-crow:hover, .fa-frog:hover, .fa-locust:hover {
+    font-size: 65px;
+}
+
 .fa-locust {
     color: red;
 }
