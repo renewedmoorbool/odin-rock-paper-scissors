@@ -129,7 +129,7 @@ for(let a = 0; a < fIcons.length; a++)
         }
 
         else 
-            console.log('That');
+            console.log('This should not really be here. The code will be improved soon');
     })
 }
 
