@@ -117,7 +117,7 @@ for(let a = 0; a < fIcons.length; a++)
             computerScore = 0;
         } 
         
-        else if(computerScore > userScore && computerScore == 9)
+        if(computerScore > userScore && computerScore == 9)
         {
             gamePoints.innerHTML = gamePoints.textContent + '<br>' + 
             '<br><span class = \'losing\'>You lost the whole game! </span>' +
@@ -128,8 +128,7 @@ for(let a = 0; a < fIcons.length; a++)
             computerScore = 0;
         }
 
-        else 
-            console.log('This should not really be here. The code will be improved soon');
+        
     })
 }
 
